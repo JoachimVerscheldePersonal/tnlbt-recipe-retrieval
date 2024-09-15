@@ -1,7 +1,5 @@
 from transformers import AutoTokenizer, AutoModel
 import torch
-import torch
-from transformers import AutoTokenizer, AutoModel
 
 class HierarchicalTransformerEncoder:
     def __init__(self, model_name="kiddothe2b/hierarchical-transformer-base-4096", device=None):
