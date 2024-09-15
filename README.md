@@ -1,4 +1,3 @@
-# RecipeEmbeddings
 # Transformer-based Cross-Modal Recipe Embeddings with Large Batch Training
 
 This repository contains the implementation of the paper **"Transformer-based Cross-Modal Recipe Embeddings with Large Batch Training"** by Jing Yang, Junwen Chen, and Keiji Yanai. This project aims to reproduce the results of the paper and explore its proposed framework, **TNLBT (Transformer-based Network for Large Batch Training)**, which focuses on cross-modal recipe retrieval and image generation.
