@@ -23,6 +23,7 @@ Cross-modal recipe retrieval involves retrieving recipe texts from images and vi
 The key components of this framework include:
 - **Transformer encoders** for both image and text modalities.
 - **Vision Transformer (ViT)** for image encoding, with the option to use **CLIP-ViT**.
+- **WGAN-GP** for modality alignment.
 - **Large batch training** for improved contrastive learning.
 - **Self-supervised learning loss** to enhance cross-modal embedding learning.
 
@@ -41,8 +42,8 @@ This implementation uses **PyTorch** and **Huggingface's Transformers** library 
 To run this project, ensure you have the following dependencies installed:
 
 - Docker
-- Python 3.8+
-- PyTorch 2.0+ with CUDA support
+- Python 3.12+
+- PyTorch 2.4+ with CUDA support
 - Huggingface Transformers
 - torchvision
 - Recipe1M dataset (or a custom dataset for cross-modal retrieval)
@@ -150,7 +151,7 @@ This implementation is based on the paper:
 
 > Jing Yang, Junwen Chen, and Keiji Yanai. "Transformer-based Cross-Modal Recipe Embeddings with Large Batch Training." The University of Electro-Communications, Tokyo, Japan.
 
-Special thanks to the developers of PyTorch, Huggingface Transformers, and the Recipe1M dataset.
+Special thanks to the developers of PyTorch, Huggingface Transformers, the Recipe1M dataset and Emilien Dupont for the WGAN-GP implementation.
 
 ---
 
@@ -160,3 +161,4 @@ Special thanks to the developers of PyTorch, Huggingface Transformers, and the R
 2. [PyTorch](https://pytorch.org/)
 3. [Huggingface Transformers](https://huggingface.co/transformers/)
 4. [Recipe1M Dataset](http://pic2recipe.csail.mit.edu/)
+5. [WGAN-GP Implementation](https://github.com/EmilienDupont/wgan-gp)

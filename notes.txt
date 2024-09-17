@@ -1,1 +1,4 @@
-Using triplet loss with hard sample mining stategy
+Todo:
+- Using triplet loss with hard sample mining stategy
+- Add credits for WGAN-GP repo => - https://github.com/EmilienDupont/wgan-gp/blob/master/models.py
+
