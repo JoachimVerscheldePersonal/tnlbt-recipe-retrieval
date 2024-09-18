@@ -1,0 +1,2 @@
+training:
+  triplet_loss_margin: 0.2
