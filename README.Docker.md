@@ -1,22 +1,47 @@
-### Building and running your application
 
-When you're ready, start your application by running:
-`docker compose up --build`.
+### Step 2: Build the Docker Image
 
-Your application will be available at http://localhost:8000.
+We use Docker to create a reproducible environment. The `Dockerfile` in this repository uses **PyTorch 2.4.1 with CUDA 11.8** and configures the environment to be optimized for GPU support.
 
-### Deploying your application to the cloud
+You can either build the image manually or use Docker Compose, depending on your preferred approach.
 
-First, build your image, e.g.: `docker build -t myapp .`.
-If your cloud uses a different CPU architecture than your development
-machine (e.g., you are on a Mac M1 and your cloud provider is amd64),
-you'll want to build the image for that platform, e.g.:
-`docker build --platform=linux/amd64 -t myapp .`.
+#### Option 1: Build the Image Manually
 
-Then, push it to your registry, e.g. `docker push myregistry.com/myapp`.
+To manually build the Docker image, run:
 
-Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
-docs for more detail on building and pushing.
+```bash
+docker build -t tnlbt-recipe-retrieval .
+```
 
-### References
-* [Docker's Python guide](https://docs.docker.com/language/python/)
+#### Option 2: Use Docker Compose
+
+Alternatively, you can use Docker Compose to build and manage the service. Make sure Docker Compose is installed and run:
+
+```bash
+docker-compose build
+```
+
+### Step 3: Run the Docker Container
+
+Once the image is built, you can start a container to interact with the project. You have two options for running the container, depending on whether you want to use plain Docker commands or Docker Compose.
+
+#### Option 1: Run with Docker
+
+```bash
+docker run -it --gpus all -p 8000:8000 tnlbt-recipe-retrieval bash
+```
+
+This command will:
+
+- Start the container with GPU access (`--gpus all`)
+- Expose port 8000 (as defined in the Dockerfile) for any web applications
+
+#### Option 2: Run with Docker Compose
+
+If you prefer using Docker Compose, simply run:
+
+```bash
+docker-compose up
+```
+
+This will start the service using the configuration defined in the `compose.yml` file, which also exposes port 8000.
