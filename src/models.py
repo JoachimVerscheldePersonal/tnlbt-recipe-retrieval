@@ -62,7 +62,7 @@ class HierarchicalTransformerEncoder:
 
 class VisualTransformerEncoder: 
     
-    def __init__(self, model_name: str = "google/vit-base-patch16-224", device: str = None) -> None:
+    def __init__(self, model_name: str = "openai/clip-vit-large-patch14", device: str = None) -> None:
         """
         Initialize the encoder with the specified ViT model and feature extractor.
         Args:
