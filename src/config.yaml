@@ -1,3 +1,48 @@
+
+general:
+  seed: 1234
+  device: [0]
+
+# Data settings
+data:
+  img_path: '../im2recipe-Pytorch/data'
+  data_path: 'data/food_data/'
+  workers: 10
+  vocab_path: 'data/new_word_dict.pkl'
+
+# Model settings
+model:
+  batch_size: 64
+
+# im2recipe model settings
+im2recipe_model:
+  embDim: 1024
+  nRNNs: 1
+  srnnDim: 1024
+  irnnDim: 300
+  imfeatDim: 2048
+  stDim: 1024
+  ingrW2VDim: 300
+  maxSeqlen: 20
+  maxIngrs: 20
+  maxImgs: 5
+  numClasses: 1048
+
+# img-text settings
+img_text:
+  hidden_size: 512
+  num_layers: 1
+
+# text-img settings
+text_img:
+  noise_dim: 100
+  DF_DIM: 64
+  GF_DIM: 64
+  EMBEDDING_DIM: 128
+  R_NUM: 2
+  BRANCH_NUM: 3
+  B_CONDITION: true
+
 training:
   triplet_loss_margin: 0.2
   learning_rate: 0.0001
@@ -7,3 +52,8 @@ training:
   start_epoch: 0
   ingrW2V: 'data/vocab.bin'
   
+dataset:
+  maxlen: 20
+  vocab: 'vocab.txt'
+  dataset: '../data/recipe1M/'
+  sthdir: '../data/'
