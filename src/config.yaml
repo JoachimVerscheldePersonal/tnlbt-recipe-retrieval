@@ -16,7 +16,7 @@ model:
 
 # im2recipe model settings
 im2recipe_model:
-  embDim: 1024
+  embeddingDim: 1024
   nRNNs: 1
   srnnDim: 1024
   irnnDim: 300
@@ -41,7 +41,7 @@ text_img:
   EMBEDDING_DIM: 128
   R_NUM: 2
   BRANCH_NUM: 3
-  B_CONDITION: true
+  conditional_gan: true
 
 training:
   triplet_loss_margin: 0.2

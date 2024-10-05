@@ -200,3 +200,23 @@ class Discriminator(nn.Module):
         x = self.image_to_features(input_data)
         x = x.view(batch_size, -1)
         return self.features_to_prob(x)
+    
+
+class StackedGAN(nn.Module):
+    def __init__(self, generator_dim: int, conditional_augmentation: bool):
+        super(StackedGAN, self).__init__()
+        self.generator_dim = generator_dim
+        self.conditional_augmentation = conditional_augmentation
+        self.build_module(conditional_augmentation)
+
+    def build_module(self):
+        if self.conditional_augmentation:
+            self.conditional_augmentation_network = ConditionalAugmentationNetwork()
+
+
+class ConditionalAugmentationNetwork(nn.Module):
+    def __init__(self):
+        super(ConditionalAugmentationNetwork, self).__init__()
+
+    def forward(self, input_data):
+        pass
