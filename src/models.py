@@ -215,8 +215,12 @@ class StackedGAN(nn.Module):
 
 
 class ConditionalAugmentationNetwork(nn.Module):
-    def __init__(self):
+    def __init__(self, input_dim: int, embedding_dim: int):
         super(ConditionalAugmentationNetwork, self).__init__()
+        self.input_dim = input_dim
+        self.embedding_dim = embedding_dim
+        self.fully_connected = nn.Linear(self.input_dim, self.embedding_dim * 4, bias=True)
+        self.activation_function = GLU()
 
     def forward(self, input_data):
         pass
